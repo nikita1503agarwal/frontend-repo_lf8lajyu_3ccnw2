@@ -1,26 +1,39 @@
-import { useState } from 'react'
+import Hero from './components/Hero'
+import ValuePillars from './components/ValuePillars'
+import Trust from './components/Trust'
+import FeaturedResearch from './components/FeaturedResearch'
+import NewsletterCTA from './components/NewsletterCTA'
+import SocialProof from './components/SocialProof'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-b from-white to-slate-50 text-slate-900">
+      {/* Top bar / simple brand */}
+      <header className="sticky top-0 z-20 bg-white/80 backdrop-blur border-b border-slate-200">
+        <div className="mx-auto max-w-7xl px-6 h-14 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="h-6 w-6 rounded-sm bg-blue-700" />
+            <span className="text-sm font-semibold tracking-wide">The Polymath Society</span>
+          </div>
+          <nav className="hidden sm:flex items-center gap-6 text-sm text-slate-600">
+            <a href="#featured-research" className="hover:text-slate-900">Research</a>
+            <a href="#newsletter-cta" className="hover:text-slate-900">Newsletter</a>
+            <a href="/test" className="hover:text-slate-900">System</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <ValuePillars />
+        <Trust />
+        <FeaturedResearch />
+        <NewsletterCTA />
+        <SocialProof />
+      </main>
+
+      <Footer />
     </div>
   )
 }
